@@ -8,7 +8,7 @@ const CarrouselComponent = () => {
             <div className='text'>
                 <h4>Retrouvez-vous dans la ville de Kinshasa grâce à notre carnet d'adresses.</h4>
                 <button>
-                    <span>Rechercher</span>
+                    <span>Maps</span>
                     <FiSearch />
                 </button>
             </div>
