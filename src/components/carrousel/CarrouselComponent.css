@@ -1,0 +1,62 @@
+.carrouselMain {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background: url('../../assets/images/im3.jpg');
+}
+
+.carrouselMain .text {
+    position: absolute;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 60%;
+}
+
+.carrouselMain h4 {
+    font-family: "Poppins", "Roboto";
+    font-size: 35px;
+    color: #fff;
+    line-height: 55px;
+    letter-spacing: 2.5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.carrouselMain .text button {
+    border: 1px solid #0F52BA;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 3px;
+    background-color: #0F52BA;
+    width: 30%;
+    outline: none;
+}
+
+.carrouselMain .text button span,
+.carrouselMain .text button svg {
+    color: #fff;
+    font-family: "Poppins", "Roboto";
+}
+
+.carrouselMain .overPlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}

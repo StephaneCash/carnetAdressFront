@@ -1,0 +1,19 @@
+.baniere {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.baniere span {
+    font-size: 13px;
+    color: #000;
+}
+
+.baniere svg {
+    color: #666;
+    font-size: 13px !important;
+}

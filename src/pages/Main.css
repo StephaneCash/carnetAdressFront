@@ -1,0 +1,16 @@
+.mainApp .mainTypesCategories {
+    width: 100%;
+    display: flex;   
+    padding-left: 10rem;
+    padding-right: 10rem;
+    gap: 5rem;
+    justify-content: space-between;
+}
+
+.mainApp .mainTypesCategories .categoriesTypes {
+    width: 65%;
+}
+
+.mainApp .recentes{
+    width: 35%;
+}
