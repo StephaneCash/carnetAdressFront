@@ -3,8 +3,9 @@ import "./Header.css";
 import logo from "../../assets/images/logo.png";
 import { FiList, FiSearch } from "react-icons/fi"
 
-const Header = () => {
+const Header = ({setSearch}) => {
 
+    const [showInput, setShowInput] = useState(false);
     const [scrollPosition, setPosition] = useState(0);
 
     useEffect(() => {
@@ -23,7 +24,12 @@ const Header = () => {
         } else {
             headerApp.classList.remove("sticky");
         }
-    }, [scrollPosition])
+    }, [scrollPosition]);
+
+    const handleSeacrh = (e) => {
+        e.preventDefault();
+        setShowInput(false);
+    };
 
     return (
         <div className='headerApp'>
@@ -32,7 +38,18 @@ const Header = () => {
             </div>
 
             <div className='icons'>
-                <FiSearch />
+                {
+                    showInput ?
+                        <form onSubmit={(e) => handleSeacrh(e)}>
+                            <input
+                                type="search"
+                                placeholder='Rechercher une adresse...'
+                                onChange={(e) => setSearch(e.target.value)}
+                            />
+                            <FiSearch onClick={(e) => handleSeacrh(e)} color='#0F52BA' />
+                        </form> :
+                        <FiSearch onClick={() => setShowInput(!showInput)} />
+                }
                 <FiList />
             </div>
         </div>

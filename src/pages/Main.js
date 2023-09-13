@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/header/Header';
 import "./Main.css"
 import Baniere from '../components/baniere/Baniere';
@@ -7,14 +7,19 @@ import AdressesRecentes from '../components/adressesRecentes/AdressesRecentes';
 import CarrouselComponent from '../components/carrousel/Carrousel';
 
 const Main = () => {
+
+    const [serach, setSearch] = useState('');
+
+    console.log(serach , " SEARCH VALUE")
+
     return (
         <div className='mainApp'>
-            <Header />
+            <Header setSearch={setSearch} />
             <CarrouselComponent />
             <Baniere />
             <div className='mainTypesCategories'>
                 <div className='categoriesTypes'>
-                    <Categories />
+                    <Categories serach={serach} />
                 </div>
                 <div className='recentes'>
                     <AdressesRecentes/>

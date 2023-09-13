@@ -27,6 +27,20 @@
     cursor: pointer;
 }
 
+.headerApp form {
+    border: 1px solid silver;
+    border-radius: 30px;
+    padding: .5rem 1rem;
+}
+
+.headerApp input {
+    outline: none;
+    border: 0;
+    border-radius: 3px;
+    font-size: 13px;
+    background-color: transparent;
+}
+
 .headerApp .icons {
     display: flex;
     align-items: center;
