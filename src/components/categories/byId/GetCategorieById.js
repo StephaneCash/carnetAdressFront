@@ -44,6 +44,16 @@ const GetCategorieById = () => {
             nom
     };
 
+
+    const [currentPage, setCurrentPage] = React.useState(1);
+    const cunt = 10;
+
+    const lastIndex = currentPage * cunt;
+    const firstIndex = lastIndex - cunt;
+    const records = entites && entites.length > 0 && entites.slice(firstIndex, lastIndex);
+    const nbPage = Math.ceil(entites && entites.length > 0 && entites.length / cunt);
+    const numbers = [...Array(entites && nbPage + 1).keys()].slice(1);
+
     return (
         <div className='getCategorieById'>
             <div className='bgImage' style={{ backgroundImage: `url(${baseUrlImage + "/" + image})` }}>
@@ -70,15 +80,69 @@ const GetCategorieById = () => {
 
             <div className='grille'>
                 {
-                    entites && entites.length > 0 ?
-                        entites.map(val => {
+                    records && records.length > 0 ?
+                        records.map(val => {
                             return <Card entite={val} key={val.id} />
                         })
                         : "0 Adresses."
                 }
             </div>
+
+            <div className='paginationsContent'>
+                <nav className='paginationNav'>
+                    <ul className='pagination'>
+                        <li className='page-item'>
+                            <Link to="#" className='page-link'
+                                onClick={() => {
+                                    prePage()
+                                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                                }}
+                            >Retour</Link>
+                        </li>
+                        {
+                            numbers && numbers.map((n, i) => {
+                                return (
+                                    <li key={i} className={`page-item ${currentPage === n} ? 'active' : ''`}>
+                                        <Link to="#" className='page-link'
+                                            onClick={() => {
+                                                changePage(n);
+                                                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                                            }}
+                                        >{n}</Link>
+                                    </li>
+                                )
+                            })
+                        }
+                        <li className='page-item'>
+                            <Link to="#" className='page-link'
+                                onClick={() => {
+                                    nextPage()
+                                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                                }
+                                }
+                            >Suivant</Link>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     )
+
+    function prePage() {
+        if (currentPage !== 1) {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+
+    function changePage(id) {
+        setCurrentPage(id)
+    }
+
+    function nextPage() {
+        if (currentPage !== nbPage) {
+            setCurrentPage(currentPage + 1)
+        }
+    }
 }
 
 export default GetCategorieById
