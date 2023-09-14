@@ -73,6 +73,7 @@
     align-items: center;
     justify-content: center;
     overflow-x: auto;
+    margin-bottom: 3rem;
 }
 
 .categories .paginationsContent nav ul{
