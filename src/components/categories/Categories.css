@@ -66,3 +66,25 @@
     text-overflow: ellipsis;
     white-space: normal;
 }
+
+.categories .paginationsContent {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+.categories .paginationsContent nav ul{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.categories li {
+    box-shadow: none;
+}
+
+.categories .page-item.true a {
+    background-color: #0F52BA !important;
+    color: #fff;
+}

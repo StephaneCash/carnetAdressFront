@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "./Header.css";
 import logo from "../../assets/images/logo.png";
 import { FiList, FiSearch } from "react-icons/fi"
+import { Link } from 'react-router-dom';
+import { ContextApp } from '../../context/AppContext';
 
-const Header = ({setSearch}) => {
+const Header = () => {
 
     const [showInput, setShowInput] = useState(false);
     const [scrollPosition, setPosition] = useState(0);
+
+    const {setSearchCategorie} = useContext(ContextApp);
 
     useEffect(() => {
         function updatePosition() {
@@ -33,22 +37,22 @@ const Header = ({setSearch}) => {
 
     return (
         <div className='headerApp'>
-            <div className='imageLogo'>
+            <Link to="/" className='imageLogo'>
                 <img src={logo} alt="Logo" />
-            </div>
+            </Link>
 
             <div className='icons'>
                 {
                     showInput ?
-                        <form onSubmit={(e) => handleSeacrh(e)}>
+                        <form onSubmit={(e) => handleSeacrh(e)} id="search">
                             <input
                                 type="search"
                                 placeholder='Rechercher une adresse...'
-                                onChange={(e) => setSearch(e.target.value)}
+                                onChange={(e) => setSearchCategorie(e.target.value)}
                             />
                             <FiSearch onClick={(e) => handleSeacrh(e)} color='#0F52BA' />
                         </form> :
-                        <FiSearch onClick={() => setShowInput(!showInput)} />
+                        <FiSearch onClick={() => setShowInput(true)} />
                 }
                 <FiList />
             </div>
