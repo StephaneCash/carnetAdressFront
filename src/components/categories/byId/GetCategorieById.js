@@ -72,7 +72,7 @@ const GetCategorieById = () => {
                 {
                     entites && entites.length > 0 ?
                         entites.map(val => {
-                            return <Card entite={val} />
+                            return <Card entite={val} key={val.id} />
                         })
                         : "0 Adresses."
                 }
