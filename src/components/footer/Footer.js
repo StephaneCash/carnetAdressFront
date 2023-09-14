@@ -61,11 +61,21 @@ const Footer = () => {
                 </div>
 
                 <div className='col2'>
-                    <FiFacebook/>
-                    <FiTwitter/>
-                    <FiInstagram/>
-                    <FiYoutube/>
-                    <FiLinkedin/>
+                    <div>
+                        <FiFacebook />
+                    </div>
+                    <div>
+                        <FiTwitter />
+                    </div>
+                    <div>
+                        <FiInstagram />
+                    </div>
+                    <div>
+                        <FiYoutube />
+                    </div>
+                    <div>
+                        <FiLinkedin />
+                    </div>
                 </div>
             </div>
         </div>
