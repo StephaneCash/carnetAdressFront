@@ -28,7 +28,7 @@ const Card = ({ entite }) => {
     };
 
     return (
-        <Link to={`/adresses/${entite && entite.id}`} className='card'>
+        <Link to={`/adresses/${entite && entite.nom}`} className='card'>
             <img src={baseUrlImage + "/" + imageCategorie} alt={nom} />
             <span className='nom'>{subStringNom()}</span>
             <span className='textEntite'>{subStringCommune()}</span>
