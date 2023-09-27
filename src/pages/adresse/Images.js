@@ -4,7 +4,7 @@ import { FaExpand } from 'react-icons/fa';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 
 
-const Images = ({ images, nom, subStringNom }) => {
+const Images = ({ images, nom, subStringNom, params }) => {
 
     const screen = useFullScreenHandle();
 
@@ -28,8 +28,6 @@ const Images = ({ images, nom, subStringNom }) => {
                                             }}
                                         />
                                     </div>
-
-                                    <div className='bloc2'></div>
                                 </div>
                             </div>
                         </FullScreen>

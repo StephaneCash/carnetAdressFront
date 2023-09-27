@@ -7,6 +7,7 @@ import { FaHome } from 'react-icons/fa';
 import { FiChevronRight } from 'react-icons/fi';
 import "./Adresse.css";
 import Images from './Images';
+import Rx from './Rx';
 
 const Adresse = () => {
 
@@ -70,6 +71,10 @@ const Adresse = () => {
                     <span className='dateCreated'>{timestampParser(adresse && adresse.createdAt)}</span>
                 </div>
                 <div className='overPlay'></div>
+
+                <div className='rxShare'>
+                    <Rx />
+                </div>
             </div>
 
             <div className='ban'>
@@ -88,6 +93,7 @@ const Adresse = () => {
                     images={images}
                     nom={nom}
                     subStringNom={subStringNom}
+                    params={params}
                 />
             </div>
         </div>

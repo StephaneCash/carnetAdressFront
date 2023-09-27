@@ -50,6 +50,13 @@
     background-color: rgba(0, 0, 0, 0.6);
 }
 
+.adresse .rxShare {
+    position: absolute;
+    z-index: 1;
+    right: 2%;
+    bottom: 2%;
+}
+
 .adresse .desc {
     font-family: "Poppins-Light", sans-serif;
     font-size: 14px;
@@ -118,4 +125,16 @@
 
 .adresse .images .grille .card img:hover {
     transform: scale(1.025);
+}
+
+.adresse .rx {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.adresse .rx .iconsRxS {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
