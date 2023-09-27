@@ -67,15 +67,20 @@
 }
 
 .getCategorieById .description {
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 14px;
+    color: #000;
+    letter-spacing: 0.7px;
+    line-height: 22px;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    white-space: normal;
+    text-align: justify;
     padding-left: 10rem;
     padding-right: 10rem;
     margin-top: 3rem;
-}
-
-.getCategorieById .description div {
-    font-size: 1.2rem;
-    margin-top: 1rem !important;
-    text-align: justify;
+    margin-bottom: 3rem;
 }
 
 .getCategorieById h5 {
