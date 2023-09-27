@@ -6,6 +6,7 @@ import { timestampParser } from '../../utils/Utils';
 import { FaHome } from 'react-icons/fa';
 import { FiChevronRight } from 'react-icons/fi';
 import "./Adresse.css";
+import Images from './Images';
 
 const Adresse = () => {
 
@@ -38,10 +39,10 @@ const Adresse = () => {
     const image = adresse && adresse.image && adresse.image.replace("\\", "/");
     const images = adresse && adresse.images;
 
-    const subStringNom = () => {
-        return nom && nom.length > 50 ?
-            nom && nom.substring(0, 50) + "..." :
-            nom
+    const subStringNom = (item) => {
+        return item && item.length > 50 ?
+            item && item.substring(0, 50) + "..." :
+            item
     };
 
     const description = categorie && categorie.desc;
@@ -56,13 +57,11 @@ const Adresse = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, []);
 
-    console.log(categorie)
-
     return (
         <div className='adresse'>
             <div className='bgImage' style={{ backgroundImage: `url(${baseUrlImage + "/" + image})` }}>
                 <div className='text'>
-                    <h4>{subStringNom()}</h4>
+                    <h4>{subStringNom(nom)}</h4>
                     <p className='desc'>
                         {
                             adresse && adresse.desc
@@ -79,10 +78,18 @@ const Adresse = () => {
                 <FiChevronRight />
                 <Link to={`/categories/${categorie && categorie.id}`}>{subStringDesc()}</Link>
                 <FiChevronRight />
-                <span>{subStringNom()}</span>
+                <span>{subStringNom(nom)}</span>
             </div>
 
             <div className='description'></div>
+
+            <div className='images'>
+                <Images
+                    images={images}
+                    nom={nom}
+                    subStringNom={subStringNom}
+                />
+            </div>
         </div>
     )
 }

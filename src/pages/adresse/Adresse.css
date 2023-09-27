@@ -78,3 +78,44 @@
     font-size: 13px;
     text-decoration: none;
 }
+
+.adresse .images {
+    padding-left: 10rem;
+    padding-right: 10rem;
+    margin-top: 2rem;
+}
+
+.adresse .images h6 {
+    font-family: "Vangeda-Regular", sans-serif;
+    font-size: 40px;
+    color: #000;
+    line-height: 55px;
+    letter-spacing: 2.5px;
+    font-weight: bold;
+}
+
+.adresse .images .grille {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 49%);
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.adresse .images .grille .card {
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1.5rem;
+}
+
+.adresse .images .grille .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.adresse .images .grille .card img:hover {
+    transform: scale(1.025);
+}
