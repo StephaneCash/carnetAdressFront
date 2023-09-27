@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { baseUrlImage } from '../../../bases/basesUrl';
 
-const Card = ({ entite }) => {
+const Card = ({ entite, categorie }) => {
 
     const imageCategorie = entite && entite.image;
     const desc = entite && entite.desc;
@@ -28,7 +28,7 @@ const Card = ({ entite }) => {
     };
 
     return (
-        <Link to={`/adresses/${entite && entite.nom}`} className='card'>
+        <Link to={`/adresses/${entite && entite.nom}`} state={{ val: categorie }} className='card'>
             <img src={baseUrlImage + "/" + imageCategorie} alt={nom} />
             <span className='nom'>{subStringNom()}</span>
             <span className='textEntite'>{subStringCommune()}</span>

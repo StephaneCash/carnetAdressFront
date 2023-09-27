@@ -53,6 +53,8 @@ const GetCategorieById = () => {
     const nbPage = Math.ceil(entites && entites.length > 0 && entites.length / cunt);
     const numbers = [...Array(entites && nbPage + 1).keys()].slice(1);
 
+    const splitDesc = desc && desc.split(".");
+
     return (
         <div className='getCategorieById'>
             <div className='bgImage' style={{ backgroundImage: `url(${baseUrlImage + "/" + image})` }}>
@@ -72,7 +74,12 @@ const GetCategorieById = () => {
             </div>
 
             <div className='description'>
-                {desc && desc}
+                {
+                    splitDesc && splitDesc.length > 0 && splitDesc.map(val => {
+                        console.log(val)
+                        return <div>{val}.</div>
+                    })
+                }
             </div>
 
             <h5>{entites && entites.length} Adresse(s) disponible(s)</h5>
@@ -81,7 +88,7 @@ const GetCategorieById = () => {
                 {
                     records && records.length > 0 ?
                         records.map(val => {
-                            return <Card entite={val} key={val.id} />
+                            return <Card entite={val} key={val.id} categorie={categorie} />
                         })
                         : "0 Adresses."
                 }

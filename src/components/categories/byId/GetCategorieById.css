@@ -70,7 +70,16 @@
     padding-left: 10rem;
     padding-right: 10rem;
     margin-top: 3rem;
-    margin-bottom: 2rem;
+}
+
+.getCategorieById .description div {
+    font-size: 1.2rem;
+    margin-top: 1rem !important;
+    text-align: justify;
+}
+
+.getCategorieById .description div:last-child{
+    margin-bottom: 0;
 }
 
 .getCategorieById h5 {
