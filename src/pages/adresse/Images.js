@@ -4,7 +4,7 @@ import { FaExpand } from 'react-icons/fa';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 
 
-const Images = ({ images, nom, subStringNom, params }) => {
+const Images = ({ images, nom, subStringNom }) => {
 
     const screen = useFullScreenHandle();
 
@@ -15,22 +15,18 @@ const Images = ({ images, nom, subStringNom, params }) => {
             <div className='grille'>
                 {
                     images && images.length > 0 && images.map(val => {
-                        console.log(val)
-                        return <FullScreen handle={screen}>
-                            <div className='card'>
+                        return <div className='card' key={val.id}>
+                            <FullScreen handle={screen}>
                                 <img src={baseUrlImage + "/" + val.url} alt="" />
-
                                 <div className='icons'>
-                                    <div className='bloc1'>
-                                        <FaExpand
-                                            onClick={() => {
-                                                screen.enter()
-                                            }}
-                                        />
-                                    </div>
+                                    <FaExpand
+                                        onClick={() => {
+                                            screen.enter()
+                                        }}
+                                    />
                                 </div>
-                            </div>
-                        </FullScreen>
+                            </FullScreen>
+                        </div>
                     })
                 }
             </div>

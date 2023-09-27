@@ -110,9 +110,10 @@
 }
 
 .adresse .images .grille .card {
-    border-radius: 5px;
-    border: 0;
+    border-radius: 0;
     margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    height: 400px;
 }
 
 .adresse .images .grille .card img {
@@ -121,10 +122,23 @@
     object-fit: cover;
     cursor: pointer;
     transition: all .4s;
+    border: 0;
 }
 
 .adresse .images .grille .card img:hover {
     transform: scale(1.025);
+    border: 0;
+}
+
+.adresse .images .icons {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.adresse .images .icons svg {
+    color: #fff;
+    font-size: 2rem;
 }
 
 .adresse .rx {

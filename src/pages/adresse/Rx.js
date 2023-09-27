@@ -9,10 +9,12 @@ import {
     WhatsappShareButton,
     LinkedinShareButton
 } from "react-share";
+import {  baseNameDomaine } from '../../bases/basesUrl';
 
-const Rx = ({ nom }) => {
+const Rx = ({ param }) => {
 
-    const url = ""
+    const url = baseNameDomaine + param;
+
     return (
         <div className='rx'>
             <FiShare2 size={20} color='#fff' />

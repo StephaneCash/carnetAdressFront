@@ -58,6 +58,8 @@ const Adresse = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, []);
 
+    const url = location && location.pathname;
+
     return (
         <div className='adresse'>
             <div className='bgImage' style={{ backgroundImage: `url(${baseUrlImage + "/" + image})` }}>
@@ -73,7 +75,7 @@ const Adresse = () => {
                 <div className='overPlay'></div>
 
                 <div className='rxShare'>
-                    <Rx />
+                    <Rx param={url} />
                 </div>
             </div>
 
@@ -93,7 +95,6 @@ const Adresse = () => {
                     images={images}
                     nom={nom}
                     subStringNom={subStringNom}
-                    params={params}
                 />
             </div>
         </div>
