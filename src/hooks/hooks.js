@@ -37,6 +37,16 @@ export const getAllEntiteByName = async (name) => {
         const entites = data && data.data;
 
         const entite = entites && entites.length > 0 && entites.filter(val => val.nom && val.nom.includes(name));
+        return entite && entite.length > 0 && entite[0] && entite[0].id;
+    } catch (error) {
+        console.log(error.response);
+    }
+};
+
+export const getEntityById = async (id) => {
+    try {
+        const { data } = await axios.get(`${baseUrl}/entites/${id}`);
+        const entite = data && data.data;
         return entite;
     } catch (error) {
         console.log(error.response);
