@@ -44,7 +44,6 @@ const GetCategorieById = () => {
             nom
     };
 
-
     const [currentPage, setCurrentPage] = React.useState(1);
     const cunt = 10;
 
