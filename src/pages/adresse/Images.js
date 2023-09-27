@@ -1,8 +1,12 @@
 import React from 'react'
 import { baseUrlImage } from '../../bases/basesUrl'
 import { FaExpand } from 'react-icons/fa';
+import { FullScreen, useFullScreenHandle } from 'react-full-screen';
+
 
 const Images = ({ images, nom, subStringNom }) => {
+
+    const screen = useFullScreenHandle();
 
     return (
         <div className='imagesComponent'>
@@ -12,17 +16,23 @@ const Images = ({ images, nom, subStringNom }) => {
                 {
                     images && images.length > 0 && images.map(val => {
                         console.log(val)
-                        return <div className='card'>
-                            <img src={baseUrlImage + "/" + val.url} alt="" />
+                        return <FullScreen handle={screen}>
+                            <div className='card'>
+                                <img src={baseUrlImage + "/" + val.url} alt="" />
 
-                            <div className='icons'>
-                                <div className='bloc1'>
-                                    <FaExpand />
+                                <div className='icons'>
+                                    <div className='bloc1'>
+                                        <FaExpand
+                                            onClick={() => {
+                                                screen.enter()
+                                            }}
+                                        />
+                                    </div>
+
+                                    <div className='bloc2'></div>
                                 </div>
-
-                                <div className='bloc2'></div>
                             </div>
-                        </div>
+                        </FullScreen>
                     })
                 }
             </div>
