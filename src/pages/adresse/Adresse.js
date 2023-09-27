@@ -90,8 +90,12 @@ const Adresse = () => {
                 <FaHome />
                 <Link to="/">Accueil</Link>
                 <FiChevronRight />
-                <Link to={`/categories/${categorie && categorie.id}`}>{subStringDesc()}</Link>
-                <FiChevronRight />
+                {
+                    categorie && categorie.id ? <>
+                        <Link to={`/categories/${categorie && categorie.id}`}>{subStringDesc()}</Link>
+                        <FiChevronRight />
+                    </> : ""
+                }
                 <span>{subStringNom(nom)}</span>
             </div>
 

@@ -22,7 +22,7 @@ const Card = ({ entite }) => {
     };
 
     return (
-        <Link to={`adresse/${entite && entite.nom}`} className='card'>
+        <Link to={`adresses/${entite && entite.nom}`} className='card'>
             <img src={baseUrlImage + "/" + image} alt="" />
 
             <div>

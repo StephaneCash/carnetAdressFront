@@ -10,7 +10,7 @@ const Images = ({ images, nom, subStringNom }) => {
             <div className='grille'>
                 {
                     images && images.length > 0 && images.map(val => {
-                        return <div className='card' key={val.id}>*
+                        return <div className='card' key={val.id}>
                             <img src={baseUrlImage + "/" + val.url} alt="" />
                         </div>
                     })
