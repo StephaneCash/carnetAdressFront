@@ -33,7 +33,7 @@
     text-align: center;
 }
 
-.carrouselMain .text button {
+.carrouselMain .text a {
     border: 1px solid #0F52BA;
     padding: .5rem 1rem;
     display: flex;
@@ -46,8 +46,12 @@
     outline: none;
 }
 
-.carrouselMain .text button span,
-.carrouselMain .text button svg {
+.carrouselMain .text a {
+    text-decoration: none;
+}
+
+.carrouselMain .text a span,
+.carrouselMain .text a svg {
     color: #fff;
     font-family: "Poppins", "Roboto";
 }

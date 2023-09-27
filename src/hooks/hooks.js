@@ -24,8 +24,20 @@ export const getCategorieById = async (id) => {
 export const getAllEntites = async () => {
     try {
         const { data } = await axios.get(`${baseUrl}/entites`);
-        const categories = data && data.data;
-        return categories;
+        const entites = data && data.data;
+        return entites;
+    } catch (error) {
+        console.log(error.response);
+    }
+};
+
+export const getAllEntiteByName = async (name) => {
+    try {
+        const { data } = await axios.get(`${baseUrl}/entites`);
+        const entites = data && data.data;
+
+        const entite = entites && entites.length > 0 && entites.filter(val => val.nom && val.nom.includes(name));
+        return entite;
     } catch (error) {
         console.log(error.response);
     }
