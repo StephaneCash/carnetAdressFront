@@ -8,6 +8,7 @@ import { FiChevronRight } from 'react-icons/fi';
 import "./Adresse.css";
 import Images from './Images';
 import Rx from './Rx';
+import Table from './Table';
 
 const Adresse = () => {
 
@@ -54,6 +55,12 @@ const Adresse = () => {
             description
     };
 
+    const subStringDescription = () => {
+        return description && description.length > 300 ?
+            description && description.substring(0, 300) + "..." :
+            description
+    };
+
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, []);
@@ -67,7 +74,7 @@ const Adresse = () => {
                     <h4>{subStringNom(nom)}</h4>
                     <p className='desc'>
                         {
-                            adresse && adresse.desc
+                            subStringDescription()
                         }
                     </p>
                     <span className='dateCreated'>{timestampParser(adresse && adresse.createdAt)}</span>
@@ -88,7 +95,15 @@ const Adresse = () => {
                 <span>{subStringNom(nom)}</span>
             </div>
 
-            <div className='description'></div>
+            <div className='description'>
+                {
+                    adresse && adresse.desc
+                }
+            </div>
+
+            <div className='tableDesc'>
+                <Table adresse={adresse} />
+            </div>
 
             <div className='images'>
                 <Images
